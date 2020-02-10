@@ -48,7 +48,7 @@
  * @author Robert Sedgewick
  * @author Kevin Wayne
  *
- * */
+ */
 
 public class QuickFindUF {
     private int[] id;   // id[i] = component identifier of i
