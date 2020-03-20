@@ -4,3 +4,6 @@
 [submodule "back-end/programming-languages/graphql/software-engineer"]
 	path = back-end/programming-languages/graphql/software-engineer
 	url = git@github.com:areisrosa/software-engineer.git
+[submodule "dev-ops/infrastructure/live-terminal/vim-cheatsheet"]
+	path = dev-ops/infrastructure/live-terminal/vim-cheatsheet
+	url = git@github.com:Praful/vim-cheatsheet.git
