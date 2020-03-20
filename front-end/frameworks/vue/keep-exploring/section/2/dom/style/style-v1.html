@@ -1,0 +1,45 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>
+    #app {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .demo {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+    .c1 {
+        background-color: red;
+    }
+
+    .c2 {
+        background-color: green;
+    }
+
+    .c3 {
+        background-color: blue;
+    }
+</style>
+
+<div id="app">
+    <div class="demo" :class="{c1: putC1}"
+         @click="putC1 = !putC1"></div>
+    <div class="demo" :class="{c2: putC2}"
+        @click="putC2 = !putC2"></div>
+    <div class="demo" :class="{c3: putC3}"
+         @click="putC3 = !putC3"></div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            putC1: false,
+            putC2: false,
+            putC3: false
+        }
+    })
+</script>

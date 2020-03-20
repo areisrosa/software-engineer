@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <button v-on:click="heighten">Heighten</button>
+    <button v-on:click="decrease">Decrease</button>
+    <p> Counter {{ counter }}</p>
+    <p> Result {{ result() }}</p>
+</div>
+
+<script>
+    var app = new Vue ({
+        el: '#app',
+        data: {
+            counter: 0,
+        },
+        methods: {
+            heighten() {
+                this.counter++
+            },
+            decrease() {
+                this.counter--
+            },
+            result() {
+                return this.counter >= 5 ?
+                'Bigger then or equal the 5' : 'Less then 5'
+            }
+        }
+    })
+</script>

@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="challenge">
+	<!-- 1) Start the effect execution using the button. 
+   The effect should alternately switch between the "featured" and "shrink" for
+   each setInteval. Use the div bellow with id "effect" to associate the CSS
+   classes. -->
+			<h2>#01</h2>
+			<div>
+				<button @click="startEffect">Start Effect</button>
+				<div id="effect" :class="class1"></div>
+			</div>
+			
+			<!-- 2) Created two CSS classes and associate a div using the array syntax.
+			-->
+			<h2>#02</h2>
+			<div :class="[{danger: danger}, 'square']">Im am without CSS class :(</div>
+
+			<!-- 3) Apply the class provided by the user to the div bellow
+				(create exemple CSS class). -->
+			<h2>#03</h2>
+			<div>
+				<input type="text" v-model="class3">
+				<div :class="class3"></div>
+			</div>
+
+			<!-- 4) Apply the class provided by the user to the div below
+			another class using the value  true/false (create exemple CSS classes). -->
+			<h2>#04</h2>
+			<div>
+				<input type="text" v-model="class4">
+				<input type="text" @input="setDanger">
+				<div :class="[class4, {danger: danger}]"></div>
+			</div>
+
+			<!-- 5) Repeat 3) but using styles instead of CSS classes
+			 Associate the styles with div below -->
+			<h2>#05</h2>
+			<div>
+				<input type="text" v-model="color5">
+				<div :style="[style5, {backgroundColor: color5}]"></div>
+			</div>
+
+			<!-- 6) Created a simple progress bar with setInterval
+			and style binding. -->
+			<h2>#06</h2>
+			<div>
+				<button @click="startProgress">Start</button>
+				<div class="progress-bar">
+					<div class="progress" :style="{width}"></div>
+				</div>
+			</div>
+</div>
+<script src="app.js"></script>

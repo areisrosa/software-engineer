@@ -1,0 +1,27 @@
+html {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-decoration-style: wavy;
+}
+
+img {
+ position: fixed;
+ right: 0px;
+ bottom: 0px;
+}
+
+body {
+  background-image:
+  url("https://courses.edx.org/asset-v1:W3Cx+HTML5.0x+1T2017+type@asset+block@cornerpiece.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-attachment: fixed;
+}
+
+p {
+    position: relative;
+    z-index: 2;
+}

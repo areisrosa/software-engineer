@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="(color, index) in colors"
+            :key="color">{{index +1}} {{color}}</li>
+    </ul>
+    <button @click="colors.push('white')">Add</button>
+    <hr>
+    <template v-for="(color, index) of colors">
+        <h1>{{ color }}</h1>
+        <p>{{ index }}</p>
+    </template>
+    <hr>
+    <ul>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            colors: ['red', 'green', 'yellow', 'blue', 'black'],
+            people: [
+                {name: 'Alice', age: 26, weight: 60},
+                {name: 'Bob', age: 30, weight: 80}
+            ]
+        }
+    })
+</script>

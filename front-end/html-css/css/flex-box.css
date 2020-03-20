@@ -1,0 +1,19 @@
+body{ margin:0px; }
+
+p {
+    margin:10px;
+    padding:20px; 
+    background-color:lightgray;
+    border-radius: 10px;
+}
+.fc {
+    display: flex;
+    flex-flow: row wrap;
+}
+.first, .third, .fouth {
+    flex: 2;
+}
+
+.second {
+    flex: 1;
+}

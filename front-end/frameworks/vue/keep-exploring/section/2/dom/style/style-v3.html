@@ -1,0 +1,59 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>
+    .boxs {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .demo {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+    .c1 {
+        background-color: red;
+    }
+
+    .c2 {
+        background-color: green;
+    }
+
+    .c3 {
+        background-color: blue;
+    }
+
+    .axis {
+        transform: rotate(45deg);
+    }
+</style>
+
+<div id="app">
+    <div class="boxs">
+        <div class="demo" :class="style1"
+             @click="putC1 = !putC1"></div>
+        <div class="demo"></div>
+        <div class="demo" :class="[classCSS, {axis: applyRotate}]"></div>
+    </div>
+    <hr>
+    <input type="text" v-model="classCSS">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            putC1: false,
+            classCSS: '',
+            applyRotate: true
+        },
+        computed: {
+            style1() {
+                return {
+                    c1: this.putC1,
+                    c2: !this.putC1,
+                }
+            }
+        }
+    })
+</script>

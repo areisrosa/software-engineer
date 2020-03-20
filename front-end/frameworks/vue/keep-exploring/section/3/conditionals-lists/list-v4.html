@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="person in people">
+            <div v-for="(value, key, index) in person">
+                {{ key }} = {{ value }} ({{ index + 1 }})
+            </div>
+        </li>
+    </ul>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            colors: ['red', 'green', 'yellow', 'blue'],
+            people: [
+                {name: 'Alice', age: 26, weight: 60},
+                {name: 'Bob', age: 30, weight: 80}
+            ]
+        }
+    })
+</script>
+
