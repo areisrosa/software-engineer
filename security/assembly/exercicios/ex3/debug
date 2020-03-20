@@ -1,0 +1,18 @@
+#!/bin/bash
+FNAME=program
+ERRO="\nOpa, algo deu errado XoX\n"
+nasm -f elf64 -o $FNAME.o $FNAME.asm
+if [[ 0 = $? ]]
+then
+    ld $FNAME.o -o $FNAME
+
+	if [[ 0 = $? ]]
+	then
+		printf "\nArquivo \"$FNAME.asm\" compilado!\n\n"
+		gdb $FNAME
+	else
+		printf $ERRO
+	fi
+else
+       	printf $ERRO
+fi
