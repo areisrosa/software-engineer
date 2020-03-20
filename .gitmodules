@@ -1,0 +1,6 @@
+[submodule "interviews/elements-of-programming-interviews"]
+	path = interviews/elements-of-programming-interviews
+	url = https://github.com/gardncl/elements-of-programming-interviews.git
+[submodule "back-end/programming-languages/graphql/software-engineer"]
+	path = back-end/programming-languages/graphql/software-engineer
+	url = git@github.com:areisrosa/software-engineer.git
