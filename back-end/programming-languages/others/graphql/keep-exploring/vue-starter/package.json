@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "concurrently": "^3.6.0",
-    "nodemon": "^1.18.1"
+    "nodemon": "^1.18.1",
+    "lodash": ">=4.17.12"
   }
 }
