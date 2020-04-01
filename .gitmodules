@@ -7,3 +7,6 @@
 [submodule "dev-ops/infrastructure/live-terminal/vim-cheatsheet"]
 	path = dev-ops/infrastructure/live-terminal/vim-cheatsheet
 	url = git@github.com:Praful/vim-cheatsheet.git
+[submodule "front-end/web-skills"]
+	path = front-end/web-skills
+	url = https://github.com/areisrosa/web-skills
