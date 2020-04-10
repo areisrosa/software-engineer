@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://unpkg.com/vue"></script>
+        <meta name="viewport" content="width=device-width" />
+        <title>Vue Instanci</title>
+    </head>
+    <body>
+        <div id="app1">
+            {{ title }}
+            <button @click="update">Update</button>
+        </div>
+        <script>
+            const vm = new Vue({
+                el: '#app1',
+                data: {
+                    title: "Test"
+                },
+                methods: {
+                    update() {
+                        this.title += '!'
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

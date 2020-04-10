@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://unpkg.com/vue"></script>
+        <meta name="viewport" content="width=device-width" />
+        <title>Vue Instance</title>
+    </head>
+    <body>
+        <div id="app1">
+            {{ title1 }}
+            <button @click="update">Update</button>
+        </div>
+        <div id="app2">
+            {{ title2 }}
+            <button @click="update">Update</button>
+        </div>
+        <script>
+            var vm1 = new Vue({
+                el: '#app1',
+                data: {
+                    title1: "Test 1"
+                },
+                methods: {
+                    update() {
+                        vm2.title2 += ' ????'
+                    }
+                }
+            })
+            var vm2 = new Vue({
+                el: '#app2',
+                data: {
+                    title2: "Test 2"
+                },
+                methods: {
+                    update() {
+                        vm1.title1 += ' !!!!'
+                    }
+                }
+            })
+            setTimeout(() => {
+                vm1.title1 = 'Update by the team!'
+            }, 2000)
+        </script>
+    </body>
+</html>

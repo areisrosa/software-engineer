@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://unpkg.com/vue"></script>
+        <meta name="viewport" content="width=device-width" />
+        <title>Vue Instance</title>
+    </head>
+    <body>
+        <div id="app">
+            {{ title }} {{ newInfo }}
+            <button @click="update">Update</button>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    title: "Test "
+                },
+                methods: {
+                    update() {
+                        vm.title += ' !'
+                    }
+                }
+            })
+            var info = vm.newInfo = 'Test'
+            console.log(info)
+        </script>
+    </body>
+</html>

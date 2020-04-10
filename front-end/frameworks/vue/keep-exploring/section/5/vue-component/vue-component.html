@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://unpkg.com/vue"></script>
+        <meta name="viewport" content="width=device-width" />
+        <title>Vue Instance</title>
+    </head>
+    <body>
+        <div id="app">
+            <comp></comp>
+        </div>
+        <script>
+            Vue.component('comp', {
+                template: `
+                <div>
+                    <h1 ref="classRef">{{ cls }}</h1>
+                    <h2>{{ module }}</h2>
+                    <button @click="updateClass">Update Class</button>
+                    <button @click="updateModule">Update Module</button>
+                </div>
+                `,
+                data: function() {
+                    return {
+                    cls: 'Class: Vue Instance Mount.',
+                    module: 'Module: Vue Instance'
+                    }
+                },
+                methods: {
+                    updateClass() {
+                        this.cls += '#'
+                    },
+                    updateModule() {
+                        this.module += '#'
+                    }
+                }
+            })
+            var vm = new Vue({
+                el: '#app'
+            })
+        </script>
+    </body>
+</html>

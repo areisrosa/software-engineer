@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+        <meta charset="UTF-8" />
+        <script src="https://unpkg.com/vue"></script>
+        <meta name="viewport" content="width=device-width" />
+        <title>Vue Instance</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1 ref="classRef">{{ cls }}</h1>
+            <h2>{{ module }}</h2>
+            <button @click="updateClass">Update Class</button>
+            <button @click="updateModule">Update Module</button>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    cls: 'Class: Use Refs',
+                    module: 'Module: Vue Instance'
+                },
+                methods: {
+                    updateClass() {
+                        this.cls += '#'
+                    },
+                    updateModule() {
+                        this.module += '#'
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

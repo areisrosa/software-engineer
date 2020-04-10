@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://unpkg.com/vue"></script>
+        <meta name="viewport" content="width=device-width" />
+        <title> My Vue</title>
+    </head>
+    <body>
+        <div id="app">
+            {{ name }} {{ lastname }} {{ 100 - 5 }} {{ Math.pow(2, 3) }}
+        </div>
+        <script>
+            function MyVue(params) {
+                this.$el   = document.querySelector(params.el)
+                this.$data = params.data
+
+                for(let atr in this.$data) {
+                    Object.defineProperty(this, atr, {
+                        get: () => {
+                            return this.$data[atr]
+                        },
+                        set: value => {
+                            this.$data[atr] = value
+                        }
+                    })
+                }
+                const regex = /\{\{([\s\w)(,.+*-]*)\}\}/g
+                this.$el.innerHTML = this.$el.innerHTML.replace(regex, (match, $1) => {
+                    const value = this[$1.trim()]
+                    return value ? value : eval($1)
+                })
+            }
+            const vm = new MyVue({
+                el: '#app',
+                data: {
+                    name: 'Maria',
+                    lastname: 'Silva'
+                }
+            })
+            console.log(vm.name)
+            console.log(vm.$data.name)
+
+            vm.name = 'Pedro'
+            console.log(vm.name)
+            console.log(vm.$data.name)
+        </script>
+    </body>
+</html>
