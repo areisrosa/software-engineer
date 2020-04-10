@@ -1,0 +1,12 @@
+#include <stdlib.h>
+#include "queue.h"
+#include "queue.c"
+#include "test.h"
+#include "test.c"
+
+int main(int argc, char *argv[]) {
+
+  run_all_tests();
+
+  return EXIT_SUCCESS;
+}
