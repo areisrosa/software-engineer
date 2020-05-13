@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <script src="https://unpkg.com/vue"></script>
+        <title>Review</title>
+    </head>
+    <body>
+        <div id="app1">
+            <counter1></counter1>
+            <counter1></counter1>
+            <counter1></counter1>
+        </div>
+        <hr>
+        <div id="app2">
+            <counter2></counter2>
+            <counter2></counter2>
+            <counter2></counter2>
+        </div>
+        <script>
+            // Register global
+            const counter = {
+                template: `
+                    <div>
+                        <span>{{ counter }}</span>
+                        <button @click="counter++">+</button>
+                        <button @click="counter--">-</button>
+                    </div>
+                `,
+                data() {
+                    return {
+                        counter: 0
+                    }
+                }
+            }
+            new Vue({
+                el:'#app1',
+                // Register local
+                components: {
+                    counter1: counter
+                }
+            })
+            new Vue({
+                el:'#app2',
+                // Register local
+                components: {
+                    'counter2': counter
+                }
+            })
+        </script>
+    </body>
+</html>
